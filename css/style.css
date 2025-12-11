@@ -1,0 +1,443 @@
+/* Reset and Base Styling */
+* {
+  margin: 0;  /* Removes default outer spacing from all elements */
+  padding: 0;  /* Removes default inner spacing from all elements */
+  box-sizing: border-box;  /* Includes padding and borders inside the element’s total size */
+}
+
+html, body {
+  overflow-x: hidden;  /* Prevent horizontal scrolling */
+}
+
+body {
+  min-height: 100vh;  /* Ensures body is at least the height of the viewport */
+  display: flex;  /* Uses flexbox for layout */
+  flex-direction: column;  /* Stacks elements vertically (column layout) */
+}
+
+header {
+  background-image: url('../media/sky.png');  /* Sets a sky image as the background */
+  background-size: cover;  /* Scales the background to cover the header area */
+  background-position: center;  /* Centers the background image */
+  background-repeat: no-repeat;  /* Prevents the image from repeating */
+  padding: 20px;  /* Adds spacing inside the header */
+  position: relative;  /* Allows child elements to be positioned relative to header */
+  margin-bottom: 20px;  /* Adds spacing below the header */
+}
+
+.logo {
+  width: 150px;  /* Sets the width of the logo */
+  height: auto;  /* Maintains original logo aspect ratio */
+  position: static;  /* Keeps logo in normal document flow */
+  margin-top: 10px;  /* Adds space above the logo */
+  margin-left: -100px;  /* Shifts the logo leftward */
+  filter: drop-shadow(1px 1px 2px #90EE90);  /* Applies a soft green glow effect */
+}
+
+hr {
+  border: none;  /* Removes default border styling */
+  height: 2px;  /* Sets the thickness of the horizontal rule */
+  background-color: #90EE90;  /* Sets the line color to light green */
+  margin: 0 20px 20px 20px;  /* Adds spacing above, below, and to the sides */
+}
+
+main {
+  flex: 1;  /* Allows main content to grow and fill available vertical space */
+}
+
+.email-link {
+  display: inline-block;  /* Allows padding and transform to apply */
+  padding: 5px;  /* Adds inner space to the email link */
+  color: #90EE90;  /* Sets the default color to light green */
+  text-decoration: none;  /* Removes the underline from the link */
+}
+
+.email-link:hover {
+  color: #ccffcc;  /* Lightens color on hover */
+  transform: scale(1.2);  /* Slightly enlarges the link when hovered */
+}
+
+footer {
+  background: #0066cc;  /* Sets background color to blue */
+  color: #90EE90;  /* Makes footer text light green */
+  text-align: center;  /* Centers the text horizontally */
+  padding: 20px;  /* Adds space inside the footer */
+  height: 80px;  /* Sets a fixed footer height */
+}
+
+.header-container {
+  display: flex;  /* Uses flex layout for header items */
+  justify-content: space-between;  /* Spreads logo and nav to opposite ends */
+  align-items: center;  /* Vertically centers the items */
+  max-width: 1200px;  /* Limits the container width */
+  margin: 0 auto;  /* Centers the container horizontally */
+  padding: 0 20px;  /* Adds horizontal padding */
+  flex-wrap: wrap;  /* Allows wrapping on small screens */
+}
+
+.nav-menu a {
+  display: inline-block;  /* Allows spacing and hover effects */
+  margin-left: 20px;  /* Adds space between nav items */
+  text-decoration: none;  /* Removes underline */
+  color: #90EE90;  /* Sets the link color */
+  font-weight: bold;  /* Makes text bold */
+  transition: transform 0.2s ease, color 0.2 ease;  /* Smooth hover animation */
+}
+
+.nav-menu a:hover {
+  color: #ccffcc;  /* Lightens the link on hover */
+  transform: scale(1.2);  /* Slightly enlarges link on hover */
+  text-decoration: underline;  /* Underlines the link when hovered */
+}
+
+.issue-section {
+  display: flex;  /* Side-by-side layout for text and image */
+  justify-content: space-between;  /* Pushes content to edges */
+  align-items: flex-start;  /* Aligns items to the top */
+  padding: 40px 20px;  /* Adds padding inside the section */
+  gap: 20px;  /* Space between columns */
+  max-width: 1200px;  /* Limits width of the section */
+  margin: 0 auto;  /* Centers section horizontally */
+  flex-wrap: wrap;  /* Allows stacking on small screens */
+}
+
+.issue-text {
+  flex: 1;  /* Allows text section to grow/shrink as needed */
+  min-width: 280px;  /* Prevents it from getting too small */
+}
+
+.issue-text h2 {
+  margin-bottom: 10px;  /* Adds space below heading */
+  color: #1a1a1a;  /* Dark gray text */
+}
+
+.issue-text p {
+  margin-bottom: 15px;  /* Adds space between paragraphs */
+  line-height: 1.6;  /* Improves paragraph readability */
+}
+
+.issue-image {
+  flex: 1;  /* Allows image section to grow/shrink */
+  min-width: 280px;  /* Ensures image section doesn't shrink too small */
+}
+
+.issue-image img {
+  width: 500px;  /* Sets fixed image width */
+  height: 300px;  /* Sets fixed image height */
+  object-fit: cover;  /* Ensures image covers the area without distortion */
+  border-radius: 8px;  /* Rounds the corners of the image */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Adds subtle shadow */
+}
+
+.read-more, .read-less {
+  background-color: #0066cc;  /* Sets button background color */
+  color: #90EE90;  /* Sets button text color */
+  border: none;  /* Removes border */
+  padding: 8px 16px;  /* Adds padding around button text */
+  font-size: 14px;  /* Sets text size */
+  border-radius: 5px;  /* Rounds button edges */
+  cursor: pointer;  /* Shows pointer cursor on hover */
+  margin-top: 10px;  /* Adds space above button */
+}
+
+.read-more:hover, .read-less:hover {
+  background-color: #004d99;  /* Darkens button on hover */
+  transform: scale(1.2);  /* Enlarges button slightly on hover */
+}
+
+.hamburger {
+  display: none;  /* Hidden on desktop by default */
+  font-size: 28px;  /* Sets icon size */
+  background: none;  /* No background for button */
+  border: none;  /* Removes border */
+  color: #90EE90;  /* Sets icon color */
+  cursor: pointer;  /* Shows pointer on hover */
+  position: absolute;  /* Allows positioning in header */
+  top: 30px;  /* Distance from top */
+  right: 30px;  /* Distance from right */
+  z-index: 999;  /* Places above other items */
+}
+
+.action-container {
+  display: flex;  /* Use flex layout to align action blocks */
+  flex-wrap: wrap;  /* Allow items to wrap to new lines if needed */
+  justify-content: center;  /* Center the action blocks horizontally */
+  gap: 40px;  /* Add space between each block */
+  padding: 40px 20px;  /* Add space inside the container */
+}
+
+.action-block {
+  flex: 1 1 400px;  /* Allow block to grow/shrink, base width of 400px */
+  max-width: 500px;  /* Do not allow block to grow beyond 500px */
+  background-color: #f2f9ff;  /* Light blue background */
+  padding: 20px;  /* Inner space inside the block */
+  border-radius: 12px;  /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);  /* Soft shadow around block */
+  text-align: center;  /* Center-align all content */
+}
+
+.action-block h2 {
+  margin-bottom: 16px;  /* Add spacing below the title */
+  color: #003366;  /* Deep blue title color */
+}
+
+.action-description {
+  margin-bottom: 16px;  /* Space below description paragraph */
+  color: #333;  /* Dark gray text */
+  font-size: 1rem;  /* Standard font size */
+  line-height: 1.5;  /* Improve text readability */
+}
+
+.action-image {
+  width: 100%;  /* Fill the width of its container */
+  height: auto;  /* Maintain image aspect ratio */
+  max-height: 250px;  /* Limit height to 250px */
+  object-fit: cover;  /* Crop and cover the image container */
+  border-radius: 8px;  /* Slightly rounded corners */
+  margin-bottom: 16px;  /* Space below image */
+}
+
+/* Petition Form Styling */
+.petition-form {
+  display: flex;  /* Use flex layout */
+  flex-direction: column;  /* Stack elements vertically */
+  gap: 12px;  /* Space between form items */
+  align-items: center;  /* Center the form fields horizontally */
+}
+
+.petition-form label {
+  font-weight: bold;  /* Make label text bold */
+  align-self: flex-start;  /* Align label text to the left */
+}
+
+.petition-form input {
+  width: 100%;  /* Make input take full width of container */
+  padding: 10px;  /* Inner space inside the input field */
+  border: 1px solid #ccc;  /* Light gray border */
+  border-radius: 6px;  /* Slightly round input edges */
+}
+
+.petition-form button {
+  background-color: #0066cc;  /* Blue background for button */
+  color: white;  /* White text color */
+  padding: 10px 16px;  /* Inner spacing */
+  border: none;  /* No border */
+  border-radius: 6px;  /* Rounded corners */
+  cursor: pointer;  /* Pointer cursor on hover */
+}
+
+.petition-form button:hover {
+  background-color: #004c99;  /* Darker blue on hover */
+}
+
+.action-block h2, .action-block h3, .action-block h4, .action-block p, .action-block ul, .action-block img, .action-block form {
+  margin-bottom: 16px;  /* Uniform spacing below content blocks */
+}
+
+.action-block ul {
+  padding-left: 20px;  /* Indent bullet list */
+}
+
+.action-list {
+  margin-bottom: 20px;  /* Extra spacing below list */
+  padding-left: 20px;  /* Indent list items */
+  line-height: 1.8;  /* Extra space between bullet points */
+}
+
+.contact-section {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  padding: 40px 20px; /* Outer spacing */
+  gap: 30px; /* Space between each block */
+}
+
+.contact-header, .contact-form-block {
+  text-align: center; /* Center all text inside header and form blocks */
+  width: 100%; /* Ensure blocks use full width of the container */
+}
+
+.contact-header h2 {
+  font-size: 2.5rem; /* Large heading */
+  color: #003366; /* Dark blue text */
+  margin-bottom: 10px; /* Space below heading */
+}
+
+.contact-header .action-description {
+  font-size: 1.1rem; /* Slightly larger text */
+  color: #333; /* Dark gray text */
+  line-height: 1.5; /* Improved readability */
+}
+
+.contact-maps .map-row {
+  display: flex; /* Row layout */
+  flex-wrap: wrap; /* Wrap maps on smaller screens */
+  justify-content: center; /* Center maps horizontally */
+  gap: 20px; /* Space between maps */
+}
+
+.map-column {
+  flex: 1 1 400px; /* Flexible map columns */
+  max-width: 600px; /* Prevent from stretching too far */
+}
+
+.contact-form-block h3 {
+  color: #003366; /* Section heading color */
+  margin-bottom: 15px; /* Space below heading */
+}
+
+#contact-form {
+  width: 100%; /* Full width of its container */
+  display: flex; /* Use flex layout */
+  flex-direction: column; /* Stack inputs */
+  gap: 12px; /* Space between inputs */
+  align-items: center; /* Center inputs and button on mobile */
+}
+
+#contact-form label {
+  font-weight: bold; /* Make labels stand out */
+  text-align: left; /* Align text left */
+}
+
+#contact-form input {
+  padding: 10px; /* Inner spacing */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 6px; /* Rounded corners */
+  width: 100%; /* Full width */
+  max-width: 500px; /* Prevent inputs from being too wide */
+}
+
+#contact-form button {
+  background-color: #0066cc; /* Blue background */
+  color: white; /* White text */
+  padding: 10px 16px; /* Padding around text */
+  border: none; /* Remove border */
+  border-radius: 6px; /* Rounded edges */
+  cursor: pointer; /* Pointer on hover */
+  max-width: 200px; /* Limit button width */
+}
+
+#contact-form button:hover {
+  background-color: #004c99; /* Darker blue on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;  /* Stack header elements vertically */
+    align-items: flex-start;  /* Align items to the left */
+  }
+
+  .nav-menu {
+    margin-top: 10px;  /* Space between logo and nav */
+    display: flex;  /* Flex layout */
+    flex-direction: column;  /* Stack nav items vertically */
+    gap: 10px;  /* Space between nav links */
+  }
+
+  .issue-section {
+    flex-direction: column;  /* Stack text and image */
+  }
+
+  .issue-image img {
+    width: 400px;  /* Set fixed width */
+    height: 250px;  /* Set fixed height */
+    object-fit: cover;  /* Keep image from stretching */
+    border-radius: 8px;  /* Rounded edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Soft drop shadow */
+  }
+
+  .logo {
+    width: 140px;  /* Smaller logo on mobile */
+    margin: 0 0 10px 0;  /* Remove negative margin */
+  }
+
+  .hamburger {
+    display: block;  /* Show hamburger on mobile */
+  }
+
+  .nav-menu {
+    display: none;  /* Hide nav initially on mobile */
+    flex-direction: column;  /* Stack nav links vertically */
+    gap: 5px;  /* Small space between links */
+    background-color: rgba(0, 102, 204, 0.9);  /* Semi-transparent background */
+    padding: 20px;  /* Padding inside nav */
+    position: absolute;  /* Float nav menu */
+    top: 50px;  /* Position below header */
+    right: 20px;  /* Align to right */
+    z-index: 998;  /* Above other elements */
+    border-radius: 8px;  /* Rounded menu box */
+  }
+
+  .nav-menu.active {
+    display: flex;  /* Show nav when toggled active */
+  }
+
+  .action-container {
+    flex-direction: column;  /* Stack action blocks */
+    align-items: center;  /* Center blocks horizontally */
+  }
+  /* Center all contact text elements on mobile */
+  .contact-header h2, .contact-header h4, .contact-header p, .contact-form-block h3 {
+    text-align: center;
+    width: 100%;
+  }
+
+  /* Ensure form contents are aligned and centered visually */
+  #contact-form {
+    align-items: center;
+  }
+
+  #contact-form label, #contact-form input, #contact-form button {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+  }
+
+
+    /* Ensure all contact header and form content centers on mobile */
+    .contact-header h2, .contact-header h4, .contact-header p, .contact-form-block h3 {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Improve form input/button alignment for smaller screens */
+    #contact-form label, #contact-form input, #contact-form button {
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+    }
+
+    #contact-form {
+      align-items: center;
+    }
+
+    #contact-form label {
+      width: 100%;
+      max-width: 400px;
+      text-align: left;
+    }
+}
+
+/* Expand and Collapse Buttons */
+.more-text {
+  max-height: 0;  /* Collapse hidden content initially */
+  opacity: 0;  /* Make content invisible */
+  overflow: visible;  /* Allow overflow while hidden */
+  transition: max-height 0.5s ease, opacity 0.5s ease;  /* Animate opening/closing */
+  pointer-events: none;  /* Disable interactions while hidden */
+}
+
+.more-text.expanded {
+  max-height: 1000px;  /* Expand to show full content */
+  opacity: 1;  /* Make text fully visible */
+  pointer-events: auto;  /* Re-enable interactions */
+}
+
+.more-text .read-less {
+  display: none;  /* Hide "Read Less" by default */
+}
+
+.more-text.expanded .read-less {
+  display: inline-block;  /* Show "Read Less" when expanded */
+}

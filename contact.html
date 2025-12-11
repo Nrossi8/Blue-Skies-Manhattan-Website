@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"> <!-- Defines the character encoding -->
+  <title>Contact - Blue Skies Manhattan</title> <!-- Page title -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Enables responsive design -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Link to external stylesheet -->
+  <link rel="icon" href="media/favicon.png" type="image/png"> <!-- Sets favicon -->
+</head>
+
+<body> <!-- Begin page body -->
+  <header> <!-- Page header -->
+    <div class="header-container"> <!-- Wrapper for logo and nav -->
+      <a href="homepage.html">
+        <img src="media/CIS 4-MEN Logo.png" alt="Blue Skies Manhattan Logo" class="logo"> <!-- Website logo -->
+      </a>
+
+      <button class="hamburger" id="hamburger"> <!-- Hamburger button for mobile -->
+        &#9776; <!-- Hamburger icon -->
+      </button>
+
+      <nav class="nav-menu" id="navMenu"> <!-- Navigation menu -->
+        <a href="homepage.html">Home</a>
+        <a href="issues.html">Issues</a>
+        <a href="takeAction.html">Take Action</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main> <!-- Main content -->
+    <section class="action-container contact-section"> <!-- Contact section wrapper -->
+
+      <div class="action-block contact-header"> <!-- Header text block -->
+        <h2>Contact Us!</h2>
+        <p class="action-description">We’d love to hear from you. Find us at Pace University or drop us a message below!</p>
+        <h1>OR</h1>
+        <br>
+        <h4> Contact us through EMAIL:</h4>
+        <p><a href="mailto:blueskiesmanhattan@gmail.com">blueskiesmanhattan@gmail.com</a></p>
+      </div>
+
+      <div class="action-block contact-form-block"> <!-- Contact form block -->
+        <h3>Send Us a Message</h3>
+        <form class="petition-form" id="contact-form"> <!-- Contact form -->
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+          <label for="referral">How did you hear about us?</label>
+          <input type="text" id="referral" name="referral" placeholder="Friend, social media, etc.">
+
+          <label for="feedback">Feedback</label>
+          <input type="text" id="feedback" name="feedback" placeholder="We’d love to hear from you">
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
+
+      <div class="action-block contact-maps"> <!-- Map section block -->
+        <div class="map-row"> <!-- Row container for maps -->
+
+          <div class="map-column"> <!-- Column for campus map -->
+            <h3>Campus Map</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.306887313452!2d-74.00775072401287!3d40.71126023766092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a19f6c8b1d1%3A0x8a0a55f0a5fd1f1f!2sPace%20University!5e0!3m2!1sen!2sus!4v1616172820484!5m2!1sen!2sus" width="350" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="map-column"> <!-- Column for street view -->
+            <h3>Street View</h3>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!4v1616174978356!6m8!1m7!1sCAoSLEFGMVFpcE1sN3J5b1ZKZ1JpQ3Z6aWZlZ0FhR3ZtZ1Z3Q0h3R3N1V1N3T3R3!2m2!1d40.71186706665569!2d-74.00556833284723!3f144.12211904230622!4f4.327650343806951!5f0.7820865974627469" width="350" height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer> <!-- Page footer -->
+    <p>&copy; 2025 Blue Skies Manhattan. All Rights Reserved.</p>
+    <p><a href="mailto:blueskiesmanhattan@gmail.com" class="email-link">blueskiesmanhattan@gmail.com</a></p>
+  </footer>
+
+  <script src="scripts/script.js"></script> <!-- Link to JavaScript file -->
+</body>
+</html>
